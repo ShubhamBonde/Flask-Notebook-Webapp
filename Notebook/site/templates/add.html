@@ -1,0 +1,74 @@
+{% extends "layout.html" %} {% block body %}
+<!-- write your code here -->
+<form class="m-2 text-white p-3" action="/posts" method="POST">
+  <div class="container">
+    <div class="row">
+      <div class="form-control mb-2">
+        <label class="form-label" for="title"><h1 display-3>Title</h1></label>
+        <input
+          class="form-control"
+          placeholder="Title"
+          autofocus
+          autocomplete="off"
+          type="text"
+          name="title"
+          id="title"
+          required
+        />
+      </div>
+      <div class="form-control my-3">
+        <label for="text" class="form-label text-dark"
+          ><h1 display-3>Add Note</h1></label
+        >
+        <textarea
+          cols="100"
+          rows="100"
+          class="form-control-plaintext txtarea p-1"
+          name="content"
+          id="summernote"   
+        ></textarea>
+      </div>
+      <div class="form-control mb-3">
+        <label for="permalink"><h3>Permalink</h3></label>
+        <input
+          class="form-control"
+          placeholder="dash-separated"
+          type="text"
+          name="permalink"
+          id="permalink"
+          placeholder="permalink"
+          autocomplete="off"
+          required
+        />
+      </div>
+      <div class="d-inline block gap-3 form-control">
+        <input
+          class="btn btn btn-success"
+          id="editor"
+          type="submit"
+          value="Save"
+          required
+        />
+        <button class="btn btn btn-danger" id="discard-button">Discard</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<script>
+  $("#summernote").summernote({
+    placeholder: "Add notes here....",
+    tabsize: 2,
+    height: 500,
+    toolbar: [
+      ["style", ["style"]],
+      ["font", ["bold", "underline", "clear"]],
+      ["color", ["color"]],
+      ["para", ["ul", "ol", "paragraph"]],
+      ["table", ["table"]],
+      ["insert", ["link", "picture", "video"]],
+      ["view", ["fullscreen", "codeview", "help"]],
+    ],
+  });
+</script>
+{% endblock %}

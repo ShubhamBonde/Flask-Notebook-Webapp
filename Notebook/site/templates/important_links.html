@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+{% if message %}
+<div class="alert alert-success">    
+        {{message}}
+</div>
+{% endif %}
+<div class="container-md mt-5">
+    <a href="/add_link" class="btn btn-warning">Add new link</a>
+</div>
+<div class="container-md my-5 bg-light">
+    <h1>Saved Links</h1>
+
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">For</th>
+            <th scope="col">Link</th>
+            <th scope="col">Visit</th>
+            <th scope="col">Delete Link</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for link in links %}
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td><h5>{{link.link_text}}</h5></td>
+                    <td><a href="{{link.link}}" target="_blank" class="btn btn-primary"> {{link.link_text}}</a></td>
+                    <td><a href="{{link.link}}" target="_blank" class="btn btn-dark">Visit</a></td>
+                    <td><a href="/delete_link/{{link.link_text}}" class="btn btn-danger"> Delete</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+
+      
+</div>
+
+
+
+
+
+{% endblock %}

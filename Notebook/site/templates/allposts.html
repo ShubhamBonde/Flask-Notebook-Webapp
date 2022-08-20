@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<!-- write your code here -->
+<head>
+    <link rel="stylesheet" href="../static/css/notebook.css">
+</head>
+<div class="alert alert-primary alert-dismissible fade show" role="alert" >
+    You're logged in as {{session.username}}
+    <span type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></span>
+</div>
+
+    {% if session.username %}
+        
+        <div class="allposts">
+               {% for post in entries %}
+                    {% set postLink = "posts/"+ post.perma %}
+                    <form action = {{postLink}} method="post" class="mx-3">  
+                        <div class="border border-3 p-3 rounded-3 my-2 ">
+                            <h1>{{(post.title).capitalize()}}</h1>
+                            <h5 class="text-primary">{{post.date}}</h5>
+                            <i>{{post.perma}}</i>
+                            <input type="submit" class="btn btn-sm btn-primary rounded-pill", value="view more">
+                            
+                        </div>
+                    </form>
+                {% endfor %}
+            </form>
+        </div>
+    {% else %}
+        <p>You're not logged in. <a class="btn btn-primary" href="/">Log in</a></p>
+    {% endif %}
+
+{% endblock %}

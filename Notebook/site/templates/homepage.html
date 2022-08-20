@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="alert alert-warning alert-dismissible fade show">
+     <strong>You are not logged in!</strong> Please log in to access the site!
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+
+
+    <div class= "bg-light m-3 rounded shadow-sm p-5">
+        <h1 class="display-3 text-center ">
+            Are you Shubham?
+        </h1>
+
+        <h2 class="lead fst-italic form-label text text-center">This site has exclusive access to Shubham only!</h2>
+
+        <form class="container-sm" action="/status" method="POST">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" name="username" id="username" class="form-control" required placeholder="Username" autofocus autocomplete="off">
+        </div>
+        <div class="mb-3 ">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" id="password" required placeholder="Password">
+        </div>
+
+        <div class="mb-3">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="check1"
+              value="remember me"
+            />
+            <label class="form-check-label" for="check1">Remember Me</label>
+          </div>
+        </div>
+        <input type="submit" class="btn btn-outline-warning" value="Login">
+        </div>
+    </form>
+    </div>
+
+    <div class="alert alert-success m-3 alert-dismissible fade show" role="alert">
+       <h1 class="display-5"> Welcome to Notebook</h1>
+        <hr>
+        <p >This site is made with flask, Bootstap and little bit love by Shubham Bonde. This site is the kind of a notebook which I made to jot down all my learnings and readings which I can recite later! I know most of you'd say, <i>"Rather than putting this much effort on notes site, You could have used tools such as OneNote, Notion, Evernote..."</i> Yeah I know but I can't control developer itch within so I had to do it!</p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endblock %} 

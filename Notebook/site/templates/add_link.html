@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="container-md my-5 bg-light rounded p-4">
+    
+    <form  class="container-md" action="/important_links" method="post">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Link Text</label>
+          <input type="text" name="l_text" class="form-control" id="link_text"  placeholder="Link Text" required>
+          <small id="emailHelp" class="form-text text-muted">Enter your link text here.</small>
+        </div>
+        <div class="form-group">
+          <label for="link">Link</label>
+          <textarea class="form-control"name="link" id="link" cols="30" rows="10" placeholder="https://google.com" required aria-required></textarea>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="my-4 btn btn-warning">Add Link</button>
+            <a href="/important_links" class="btn btn-dark m-4">Show Links</a>
+        </div>
+    </form>
+    
+
+</div>
+
+
+
+
+
+{% endblock %}

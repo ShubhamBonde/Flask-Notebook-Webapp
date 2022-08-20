@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- write your code here -->
+<article class="container">
+    <h1 class="title display-3 mb-4 text-primary fw-bold">{{TITLE.upper()}}</h1>
+    <h4 class="">{{DATE}}</h3>
+    <i>{{PERMA}}</i>
+    <hr>
+
+    <div class="lead" id="contentbox">
+            {{CONTENT|safe}}
+    </div>
+</article>
+{% endblock %}

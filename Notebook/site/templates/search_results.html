@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="p-4 mx-1">
+    <h1>Showing search results for {{query|capitalize}}</h1>
+</div>
+    {% if results[0] %}
+    {% for result in results %}
+        {% set postlink = "/posts/" + result.perma %}
+        {% set editlink = "/posts/edit/"+ result.perma %}
+        <div class=" p-2 mb-3">
+            <div class="container border border-4 rounded" action={{postlink}} method="POST">
+                <h1 class="fw-bold">{{result.title|capitalize}}</h1>
+                <p class="ps-1 text-primary">{{result.date}}</p>
+                <a href={{postlink}} class="btn btn-success btn-sm mb-2" type="button" >View Post</a>
+                <a href={{editlink}} class="btn btn-success btn-sm mb-2" type="button" >Edit Post</a>
+                </div>
+        </div> 
+    {% endfor %}
+    {% else %}
+        <h3 class="bg-danger text-center text-white p-3">Sorry no entries for {{query}}</h3>
+    {% endif %}
+
+{% endblock %}

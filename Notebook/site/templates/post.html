@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container my-2 align-items-stretch">
+    <div class="post-head text-center">
+    <div class="post-heading">
+        <h1 class="text-primary display-3 fw-bold">{{REQUESTEDPOST.title.capitalize()}}</h1>
+    </div>
+    
+    <div class="post-date">
+        <h4 >{{REQUESTEDPOST.date}}</h4>
+    </div>
+    <div class="post-permalink">
+        <span class="badge bg-primary">Perma: {{REQUESTEDPOST.perma}}</span>
+    </div>
+    </div>
+    <hr>
+    <div class="post-content lead">
+        {{REQUESTEDPOST.content|safe}}
+    </div>
+</div>
+
+
+{% endblock %}
+

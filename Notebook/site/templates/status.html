@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if session.username and session.password%}
+    <div class="container-sm d-flex">   
+        <i class="display-1">USERNAME: {{USERNAME}}</i>    
+        <i class="display-1">PASSWORD: {{PASSWORD}}</i>
+    </div>
+{% else %}
+    <p>You are not logged in please log in to access the site content.</p>
+    <a href="/" class="btn btn-primary">Log in</div>
+{% endif %}
+{% endblock %}

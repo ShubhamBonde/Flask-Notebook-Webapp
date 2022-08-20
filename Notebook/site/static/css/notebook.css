@@ -1,0 +1,21 @@
+.info{
+    display: inline-block;
+    /* padding:100px; */
+    width:4%;  
+    text-align: center;
+    /* justify-content: center; */
+    border-radius: 50%;
+    background-color: #005731;
+    font-weight: bolder;
+    color:white;
+}
+
+.txtarea{
+    height:600px;
+    outline: none;
+}
+
+.allposts{
+    background-color: #f8f8f8;
+    min-height: 550px;
+}
